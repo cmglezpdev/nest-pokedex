@@ -22,8 +22,6 @@ export class PokemonService {
   ){
     this.defaultLimit = this.configService.get<number>('defaultLimit');
     this.defaultOffset = this.configService.get<number>('defaultOffset');
-  
-    console.log({ limit: this.defaultLimit, offset: this.defaultOffset })
   }
 
   async create(createPokemonDto: CreatePokemonDto) {

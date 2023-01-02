@@ -5,6 +5,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { envConfiguration } from './config/app.config';
+import { JoiValidationSchema } from './config/joi.validation';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
@@ -12,7 +13,8 @@ import { SeedModule } from './seed/seed.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [envConfiguration]
+      load: [envConfiguration],
+      validationSchema: JoiValidationSchema,
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname,'..', 'public'),
