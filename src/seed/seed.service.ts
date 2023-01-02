@@ -5,6 +5,7 @@ import axios, { AxiosInstance } from 'axios';
 
 import { PokeResponse } from './interfaces';
 import { Pokemon } from '../pokemon/entities/pokemon.entity';
+import { AxiosAdapter } from '../common/adapters/axios.adapter';
 
 @Injectable()
 export class SeedService {
@@ -12,11 +13,12 @@ export class SeedService {
 
   constructor(
     @InjectModel(Pokemon.name)
-    private readonly pokemonModel: Model<Pokemon>
+    private readonly pokemonModel: Model<Pokemon>,
+    private readonly axiosAdapter: AxiosAdapter
   ){}
 
   async executeSeed() {
-    const { data } = await this.axios.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=650')
+    const data = await this.axiosAdapter.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=650')
   
     const pokemons = data.results.map(({name, url}) => ({
         name,
