@@ -2,6 +2,12 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
+
+# Descripción
+
+Pokedex es una aplicación desarrollada en __Nest.js__. Es una RESTFul Api que provee información de los pokemones. Pudees _crear pokemones, buscarlos, filtrarlos, eliminarlos y actualizarlos_. Es un pequeña aplicación que sirvió de inicio en mi aprendizaje sobre __Nest.js__ 
+
+
 # Ejecutar en desarrollo
 
 1. Clonar el repositiorio
